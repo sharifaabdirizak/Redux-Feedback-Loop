@@ -9,16 +9,20 @@ function Understanding() {
     const dispatch = useDispatch();
     const [understanding, setUnderstanding] = useState('');
     
-        const handleUnderstandingChange = (event) => {
-            setUnderstanding(event.target.value);
-        }
+        const addUnderstanding = (event) => {
+        event.preventDefault();
+    
+
         let payload = understanding;
 
         dispatch({
           type: "ADD_UNDERSTANDING",
-          payload: payload,
+          payload: rate,
         });
     
+        const handleNext = () => {
+            addUnderstanding();
+
         history.push("/Support");
       };
 
@@ -29,7 +33,7 @@ function Understanding() {
             <h1>How well are you understanding the content?</h1>
             <form>
             <p>Understanding?</p>
-            <input type="number" min={1} max={5} onChange={handleUnderstandingChange}/>
+            <input type="number" min={1} max={5} onChange={event}/>
             </form>
             <button onClick={handleNext}>Next</button>
             </div>
@@ -37,6 +41,6 @@ function Understanding() {
     );
     }
 
-
+}
 
 export default Understanding;
