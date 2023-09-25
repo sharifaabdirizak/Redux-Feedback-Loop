@@ -10,6 +10,7 @@ function Feelings() {
   const [feeling, setFeelings] = useState(0);
 
   const handleFeelingChange = (event) => {
+    setFeelings.preventDefault();
   
     let payload = feeling;
 
@@ -28,7 +29,7 @@ function Feelings() {
         <form onSubmit={handleFeelingChange}>
           <div className="form-group">
             <input
-              onChange={(event) => setFeelings(event.target.value)}
+              onChange={(handleFeelingChange) => setFeelings(event.target.value)}
               type="number"
               min="0"
               max="5"
