@@ -22,7 +22,6 @@ function Understanding() {
     
         const handleNext = () => {
             addUnderstanding();
-
         history.push("/Support");
       };
 
