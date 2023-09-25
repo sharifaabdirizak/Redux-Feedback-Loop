@@ -10,39 +10,35 @@ function Understanding() {
     const [support, setSupport] = useState(0);
     
 
-    const handleSupportChange = (event) => {
-        setSupport(event.target.value);
+    const addSupport = (event) => {
+        event.preventDefault();
     }
     let payload = support
 
     dispatch({
       type: "ADD_SUPPORT",
-      payload: payload,
+      payload: support,
     });
 
-    history.push("/comments");
+
+    const handleNext = () => {
+        addSupport(); 
+        history.push('/Comments');
+    }
+
   };
 
   return (
+    <>
     <div className="form-container">
-      <h1>How well are you understanding the content?</h1>
-      <form onSubmit={handleSupport}>
-        <div className="form-group">
-          <label name="understanding">Support?</label>
-          <input
-            onChange={(event) => setSupport(event.target.value)}
-            type="number"
-            name="understanding"
-            min="0"
-            max="5"
-            required
-            value={support}
-          />
-        </div>
-        <button type="submit">NEXT</button>
-      </form>
-    </div>
-  );
+             <h1>How well are you being supported?</h1>
+            <form>
+            <p>Support?</p>
+            <input type="number" min={1} max={5} onChange={handleSupportChange}/>
+            </form>
+            <button onClick={handleNext}>Next</button>
+        </>
+    );
 }
 
 
