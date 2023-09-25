@@ -35,6 +35,8 @@ function Understanding() {
             </div>
         </>
     );
-}
+    }
+
+
 
 export default Understanding;
