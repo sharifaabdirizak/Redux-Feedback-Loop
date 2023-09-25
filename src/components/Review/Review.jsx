@@ -10,8 +10,6 @@ function Review() {
     const comments = useSelector(store => store.comments);
 }
 
-
-
 const handleSubmit = () => {
     let newfeedBack = {
       feeling,
