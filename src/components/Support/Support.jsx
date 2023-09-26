@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
-function Understanding() {
+function Support() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [support, setSupport] = useState(0);
@@ -33,4 +33,4 @@ function Understanding() {
   );
 }
 
-export default Understanding;
+export default Support;

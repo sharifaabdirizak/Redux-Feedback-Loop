@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 
-function Support () {
+function Success () {
     const history = useHistory();
     const dispatch = useDispatch();
 
